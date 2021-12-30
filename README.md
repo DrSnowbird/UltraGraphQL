@@ -9,6 +9,14 @@
   * src/main/java/org/hypergraphql/config/system/GraphqlConfig.java: extended GraphqlConfig to support 'host' property
   * src/main/java/org/hypergraphql/schemaextraction/SPARQLExtraction.java: changed RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:"
 
+# Related Projects
+* [UltraGraphQL-Upstream](https://git.rwth-aachen.de/i5/ultragraphql)
+* [HyberGraphQL-Upstream](https://github.com/hypergraphql/hypergraphql)
+* [HyberGraphQL](https://github.com/DrSnowbird/HyperGraphQL)
+* [UltraGraphQL](https://github.com/DrSnowbird/UltraGraphQL)
+* [HyberGraphQL-docker](https://github.com/DrSnowbird/HyperGraphQL-docker)
+* [UltraGraphQL-docker](https://github.com/DrSnowbird/UltraGraphQL-docker)
+
 # [<img src="./docs/figures/HyperGraphQL.png" width="30">](hypergraphql-logo.svg) UltraGraphQL
 UltraGraphQL is a [GraphQL](https://graphql.org/) interface for querying and modifying RDF data on the Web.
 It extends [HyperGraphQL](https://www.hypergraphql.org/) by providing a automatic bootstrapping phase of the service and a more feature rich schema support with additional support for GraphQL mutations.
