@@ -158,7 +158,7 @@ shadowJar {
     zip64 = true
 
     exclude  'LICENSE', 'LICENSE/**', 'license', 'license/**'
-    classifier = 'exe'
+    archiveClassifier.set("exe")
 
     manifest {
         attributes 'Class-Path': 'org.apache.cxf.transport.http'
