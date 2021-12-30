@@ -9,16 +9,19 @@
   * src/main/java/org/hypergraphql/config/system/GraphqlConfig.java: extended GraphqlConfig to support 'host' property
   * src/main/java/org/hypergraphql/schemaextraction/SPARQLExtraction.java: changed RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:"
 
-### Release
-This is also a fix to mitigate the Log4Shell vulnerability.
+# Release
+* This is also a fix to mitigate the Log4Shell vulnerability.
+   * update to the latest versions to avoid the Log4Shell vulnerability
 
 # Related Projects
-* [UltraGraphQL-Upstream](https://git.rwth-aachen.de/i5/ultragraphql)
-* [HyberGraphQL-Upstream](https://github.com/hypergraphql/hypergraphql)
-* [HyberGraphQL](https://github.com/DrSnowbird/HyperGraphQL)
-* [UltraGraphQL](https://github.com/DrSnowbird/UltraGraphQL)
-* [HyberGraphQL-docker](https://github.com/DrSnowbird/HyperGraphQL-docker)
-* [UltraGraphQL-docker](https://github.com/DrSnowbird/UltraGraphQL-docker)
+* UltraGraphQL:
+   * [UltraGraphQL-Upstream](https://git.rwth-aachen.de/i5/ultragraphql)
+   * [UltraGraphQL](https://github.com/DrSnowbird/UltraGraphQL)
+   * [UltraGraphQL-docker](https://github.com/DrSnowbird/UltraGraphQL-docker)
+* HyerGrahQL:
+   * [HyberGraphQL-Upstream](https://github.com/hypergraphql/hypergraphql)
+   * [HyberGraphQL](https://github.com/DrSnowbird/HyperGraphQL)
+   * [HyberGraphQL-docker](https://github.com/DrSnowbird/HyperGraphQL-docker)
 
 # [<img src="./docs/figures/HyperGraphQL.png" width="30">](hypergraphql-logo.svg) UltraGraphQL
 UltraGraphQL is a [GraphQL](https://graphql.org/) interface for querying and modifying RDF data on the Web.
