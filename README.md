@@ -2,9 +2,9 @@
 * Updated or extended files:
   * build.gradle:
     * updated maven to use maven {url "https://plugins.gradle.org/m2/"} and 'maven-publish'
-    * gradle v7.3.3 is used
+    * updated to gradle v7.3.3 is used
     * updated shadow plugin: 'gradle.plugin.com.github.johnrengelman:shadow:7.1.0'
-    * However, failed to updated to use jenaVersion = '4.2.0' or above. Hence, only being able to upgrade to jenaVersion = '3.14.0' instead of the '3.8.0'
+    * updated to jenaVersion = '4.2.0' or above.
   * src/main/java/org/hypergraphql/Controller.java: changed host binding to allow access from outside of Container
   * src/main/java/org/hypergraphql/config/system/GraphqlConfig.java: extended GraphqlConfig to support 'host' property
   * src/main/java/org/hypergraphql/schemaextraction/SPARQLExtraction.java: changed RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:"
