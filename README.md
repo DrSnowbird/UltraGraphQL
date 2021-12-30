@@ -9,6 +9,9 @@
   * src/main/java/org/hypergraphql/config/system/GraphqlConfig.java: extended GraphqlConfig to support 'host' property
   * src/main/java/org/hypergraphql/schemaextraction/SPARQLExtraction.java: changed RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:"
 
+### Release
+This is also a fix to mitigate the Log4Shell vulnerability.
+
 # Related Projects
 * [UltraGraphQL-Upstream](https://git.rwth-aachen.de/i5/ultragraphql)
 * [HyberGraphQL-Upstream](https://github.com/hypergraphql/hypergraphql)
