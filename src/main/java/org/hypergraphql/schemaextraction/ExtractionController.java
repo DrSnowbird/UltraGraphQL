@@ -89,7 +89,7 @@ public class ExtractionController {
     public Reader getHGQLSchemaReader() throws HGQLConfigurationException{
         try {
             return new InputStreamReader(IOUtils.toInputStream(this.mapper.buildSDL(), "UTF-8"));
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.error("Could not convert HGQL schema from String to InputStreamReader");
             throw new HGQLConfigurationException("Error extracting the schema", e);
         }

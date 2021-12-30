@@ -10,14 +10,14 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.jena.fuseki.main.FusekiServer;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.DatasetFactory;
-import org.apache.jena.rdf.model.*;
-import org.apache.jena.reasoner.Reasoner;
-import org.apache.jena.reasoner.ReasonerRegistry;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.riot.web.HttpOp;
-import org.apache.jena.sparql.engine.http.Service;
-import org.apache.jena.sparql.util.Context;
 import org.apache.jena.update.UpdateAction;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,12 +32,15 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class SPARQLExtractionTest {
 
     private static final String NAME_DATASET_SUBCLASS = "/subclass";
-    static Logger log = Logger.getLogger(SPARQLExtractionTest.class.getName());
+    //static Logger log = Logger.getLogger(SPARQLExtractionTest.class.getName());
+    private static final Logger log = LogManager.getLogger(SPARQLExtractionTest.class.getName());
+
     private Dataset ds1;
     private Dataset ds2;
     private Dataset da_subclass;
@@ -205,7 +208,7 @@ class SPARQLExtractionTest {
         server1 = FusekiServer.create()
                 .add(NAME_DATASET, ds1)
                 .add(NAME_DATASET_SUBCLASS, da_subclass)
-                .setPort(8001)
+                .port(8001)
                 .build();
         server1.start();
     }

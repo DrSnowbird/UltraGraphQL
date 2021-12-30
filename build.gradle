@@ -1,8 +1,7 @@
 buildscript {
     repositories {
-        //mavenLocal()
-        //mavenCentral()
-        //jcenter()
+        mavenLocal()
+        mavenCentral()
 	maven {
 		url "https://plugins.gradle.org/m2/"
 	}
@@ -19,22 +18,21 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.github.johnrengelman.shadow'
 
 group = 'org.hypergraphql'
-version = '1.1.3'
+version = '3.0.1'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-
-
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
 }
 
 ext {
-    jenaVersion = '3.14.0' // '4.2.0' // '3.14.0' //'3.8.0'
-    cxfVersion = "3.3.7"
+    log4jVersion = '2.17.1'
+    graphqlVersion = '15.0'
+    jenaVersion = '4.2.0'
+    cxfVersion = "3.4.4"
     cxfArtifacts = [
             'cxf-rt-frontend-jaxrs',
             'cxf-rt-transports-http',
@@ -43,41 +41,44 @@ ext {
 }
 dependencies {
 //    compile group: 'org.apache.openwebbeans', name: 'openwebbeans-gradle', version: '1.7.0'
-    implementation 'com.graphql-java:graphql-java:2020-02-29T01-57-30-987fd78'
+    implementation group: 'com.graphql-java', name: 'graphql-java', version: graphqlVersion
 
-    implementation "org.apache.jena:jena-arq:$jenaVersion"
-    implementation "org.apache.jena:jena:$jenaVersion"
-    implementation "org.apache.jena:jena-core:$jenaVersion"
-    implementation "org.apache.jena:jena-fuseki-main:$jenaVersion"
-    implementation "org.apache.jena:jena-querybuilder:$jenaVersion"
+    implementation group: 'org.apache.jena', name: 'jena-arq', version: jenaVersion
+    implementation group: 'org.apache.jena', name: 'jena', version: jenaVersion
+    implementation group: 'org.apache.jena', name: 'jena-core', version: jenaVersion
+    implementation group: 'org.apache.jena', name: 'jena-fuseki-main', version: jenaVersion
+    implementation group: 'org.apache.jena', name: 'jena-querybuilder', version: jenaVersion
 
-    implementation "log4j:log4j:1.2.17"
-    implementation "org.slf4j:slf4j-api:1.7.25"
-    implementation "org.slf4j:slf4j-log4j12:1.7.25"
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: log4jVersion
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: log4jVersion
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
 
-    implementation "com.sparkjava:spark-core:2.9.1"
-    implementation "com.sparkjava:spark-template-velocity:2.5.5"
+    implementation group: 'com.sparkjava', name: 'spark-core', version: '2.9.3'
+    implementation group: 'com.sparkjava', name: 'spark-template-velocity', version: '2.7.1'
 
     implementation "javax.ws.rs:javax.ws.rs-api:2.0"
     cxfArtifacts.each { artifact ->
         implementation "org.apache.cxf:$artifact:$cxfVersion"
     }
-    implementation "org.apache.httpcomponents:httpclient:4.5.2"
+    implementation "org.apache.httpcomponents:httpclient:4.5.13"
 
-    implementation "com.mashape.unirest:unirest-java:1.4.9"
-    implementation "com.amazonaws:aws-java-sdk-s3:1.11.327"
+    implementation group: 'com.mashape.unirest', name: 'unirest-java', version: '1.4.9'
 
-    testImplementation "org.mockito:mockito-core:2.11.0"
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.869'
+
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.11.2'
 
     testImplementation "org.junit.platform:junit-platform-gradle-plugin:1.2.0"
 
-    testCompileOnly('org.apiguardian:apiguardian-api:1.0.0')
+    testCompileOnly('org.apiguardian:apiguardian-api:1.1.2')
 
     testImplementation(
-            'org.junit.jupiter:junit-jupiter-api:5.1.0'
+            'org.junit.jupiter:junit-jupiter-api:5.8.0'
     )
     testRuntimeOnly(
-            'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+            'org.junit.jupiter:junit-jupiter-engine:5.8.0'
     )
 }
 
@@ -91,7 +92,7 @@ test {
 
 task execute(type:JavaExec) {
     systemProperty('hgql_version', project.version)
-    main = 'org.hypergraphql.Application'
+    main('org.hypergraphql.Application')
     classpath = sourceSets.main.runtimeClasspath
 
     if(project.hasProperty('a')){
