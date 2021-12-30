@@ -1,0 +1,20 @@
+{
+  "name": "hgql-example-with-sparql",
+  "schema": "./src/test/resources/schema_extracted.graphql",
+  "extraction": true,
+  "mapping": "./src/test/resources/test_mapping/mapping.ttl",
+  "query": "./src/test/resources/test_mapping/queries/extraction_query_template.sparql",
+  "server": {
+    "port": 8080,
+    "graphql": "/graphql",
+    "graphiql": "/graphiql"
+  },
+  "services": [
+    {
+      "id": "Local-dataset",
+      "type": "LocalModelSPARQLService",
+      "filepath": "./src/test/resources/test_mapping/data/dataset_1.ttl",
+      "filetype": "TTL"
+    }
+  ]
+}

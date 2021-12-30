@@ -1,0 +1,42 @@
+{
+  "name": "combined-service--with-extraction-test",
+  "extraction": true,
+  "mapping": "mapping.ttl",
+  "query": "query.sparql",
+  "server": {
+    "port": 8082,
+    "graphql": "/graphql",
+    "graphiql": "/graphiql"
+  },
+  "services": [
+    {
+      "id": "person",
+      "type": "LocalModelSPARQLService",
+      "filepath": "build/resources/test/evaluation/combined_services/person.ttl",
+      "filetype": "Turtle",
+      "graph": ""
+    },
+    {
+      "id": "address",
+      "type": "LocalModelSPARQLService",
+      "filepath": "build/resources/test/evaluation/combined_services/addresses.ttl",
+      "filetype": "Turtle",
+      "graph": ""
+    },
+    {
+      "id": "city",
+      "type": "LocalModelSPARQLService",
+      "filepath": "build/resources/test/evaluation/combined_services/cities.ttl",
+      "filetype": "Turtle",
+      "graph": ""
+    }
+  ],
+  "prefixes":{
+    "eg": "http://www.example.org/",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbr": "http://dbpedia.org/resource/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "schema": "http://schema.org/"
+  }
+}

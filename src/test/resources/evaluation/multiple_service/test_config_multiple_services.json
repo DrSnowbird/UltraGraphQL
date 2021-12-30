@@ -1,0 +1,33 @@
+{
+  "name": "multiple-service-test",
+  "schema": "schema_multiple_services.graphql",
+  "server": {
+    "port": 8080,
+    "graphql": "/graphql",
+    "graphiql": "/graphiql"
+  },
+  "services": [
+    {
+      "id": "service_1",
+      "type": "LocalModelSPARQLService",
+      "filepath": "build/resources/test/evaluation/multiple_service/dataset_1.ttl",
+      "filetype":  "Turtle",
+      "graph": ""
+    },
+    {
+      "id": "service_2",
+      "type": "LocalModelSPARQLService",
+      "filepath": "build/resources/test/evaluation/multiple_service/dataset_2.ttl",
+      "filetype":  "Turtle",
+      "graph": ""
+    }
+  ],
+  "prefixes":{
+    "eg": "http://www.example.org/",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dbr": "http://dbpedia.org/resource/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "schema": "http://schema.org/"
+  }
+}

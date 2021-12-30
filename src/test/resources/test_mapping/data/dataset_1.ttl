@@ -1,0 +1,15 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/>.
+@prefix hgqls: <http://hypergraphql.org/mapping/>.
+@prefix ex: <http://example.org/>.
+
+ex:Polo a ex:car .
+ex:Fox a ex:car .
+ex:vehicle rdf:type rdfs:Class .
+ex:Fox rdfs:subClassOf ex:road_vehicle .
+ex:road_vehicle a ex:vehicle .
+ex:Polo ex:has ex:Wooddoor .
+
+ex:Wooddoor a ex:door .

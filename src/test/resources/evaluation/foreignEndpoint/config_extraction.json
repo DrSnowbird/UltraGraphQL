@@ -1,0 +1,22 @@
+{
+  "name": "hgql-example-with-sparql",
+  "schema": "schema.graphql",
+  "extraction": true,
+  "mapping": "mapping.ttl",
+  "query": "extraction_query.sparql",
+  "server": {
+    "port": 8080,
+    "graphql": "/graphql",
+    "graphiql": "/graphiql"
+  },
+  "services": [
+    {
+      "id": "dbpedia-sparql",
+      "type": "LocalModelSPARQLService",
+      "filepath": "build/resources/test/evaluation/foreignEndpoint/short_abstracts_en_uris_de.ttl",
+      "filetype": "Turtle",
+      "user": "",
+      "password": ""
+    }
+  ]
+}
