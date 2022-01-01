@@ -2,9 +2,10 @@ package org.hypergraphql.datafetching.services.resultmodel;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.hypergraphql.query.converters.SPARQLServiceConverter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
  */
 public class StringResult extends Result<Object> {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(StringResult.class);
+    private final static Logger LOGGER = LogManager.getLogger(StringResult.class);
 
 
     Set<String> values = new HashSet<>();   // contains the literal values (results) of this field

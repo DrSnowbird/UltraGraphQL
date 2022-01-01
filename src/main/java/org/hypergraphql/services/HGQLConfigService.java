@@ -17,9 +17,10 @@ import org.hypergraphql.datamodel.HGQLSchemaWiring;
 import org.hypergraphql.exception.HGQLConfigurationException;
 import org.hypergraphql.schemaextraction.ExtractionController;
 import org.hypergraphql.util.PathUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -37,7 +38,7 @@ public class HGQLConfigService {
     private static final String mapping_file_name = "schema/mapping.ttl";
     private static final String extraction_query_file_name = "schema/extraction_query_template.sparql";
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(HGQLConfigService.class);
+    private static final Logger LOGGER = LogManager.getLogger(HGQLConfigService.class);
     private static final String S3_REGEX = "(?i)^https?://s3.*\\.amazonaws\\.com/.*";
     private static final String NORMAL_URL_REGEX = "(?i)^https?://.*";
 

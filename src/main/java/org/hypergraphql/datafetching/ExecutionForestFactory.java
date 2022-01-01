@@ -7,16 +7,17 @@ import graphql.language.FragmentDefinition;
 import graphql.language.OperationDefinition;
 import graphql.language.SelectionSet;
 import org.hypergraphql.datamodel.HGQLSchema;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ExecutionForestFactory {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ExecutionForestFactory.class);
+    private final static Logger LOGGER = LogManager.getLogger(ExecutionForestFactory.class);
 
     /**
      * Generate ExecutionForest for the given query by adding an ExecutionTreeNode to the forest for each field of the

@@ -16,13 +16,14 @@ import org.hypergraphql.datafetching.services.resultmodel.Result;
 import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.mutation.SPARQLMutationConverter;
 import org.hypergraphql.query.ValidatedQuery;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.*;
 
 public class HGQLMutationService {
-    private final static Logger LOGGER = LoggerFactory.getLogger(HGQLMutationService.class);
+    private final static Logger LOGGER = LogManager.getLogger(HGQLMutationService.class);
     private final HGQLSchema hgqlSchema;
     private final GraphQLSchema schema;
     private final SPARQLMutationConverter converter;

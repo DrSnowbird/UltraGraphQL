@@ -7,9 +7,8 @@ import org.hypergraphql.datafetching.TreeExecutionResult;
 import org.hypergraphql.datafetching.services.resultmodel.Result;
 import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.query.pattern.Query;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
@@ -22,7 +21,7 @@ import java.util.stream.Collectors;
  */
 public class ManifoldService extends Service {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ManifoldService.class);
+    private final static Logger LOGGER = LogManager.getLogger(ManifoldService.class);
     private Set<Service> services;
     private String level = null;
 

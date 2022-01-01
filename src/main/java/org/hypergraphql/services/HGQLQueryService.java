@@ -13,9 +13,10 @@ import org.hypergraphql.datafetching.services.resultmodel.QueryRootResult;
 import org.hypergraphql.datafetching.services.resultmodel.Result;
 import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.query.ValidatedQuery;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.Map;
  */
 public class HGQLQueryService {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(HGQLQueryService.class);
+    private final static Logger LOGGER = LogManager.getLogger(HGQLQueryService.class);
     private GraphQL graphql;
     private GraphQLSchema schema;   // only used for IntrospectionQuery
     private HGQLSchema hgqlSchema;

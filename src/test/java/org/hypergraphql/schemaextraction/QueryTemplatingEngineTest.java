@@ -3,7 +3,8 @@ package org.hypergraphql.schemaextraction;
 import org.apache.jena.query.ParameterizedSparqlString;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class QueryTemplatingEngineTest {
 
-    static Logger log = Logger.getLogger(QueryTemplatingEngine.class.getName());
+    static Logger log = LogManager.getLogger(QueryTemplatingEngine.class.getName());
     private MappingConfig mapping;
     private MappingConfig mapping_multiple;
     private String template_query_file_path = "./src/test/resources/test_mapping/queries/extraction_query_template.sparql";

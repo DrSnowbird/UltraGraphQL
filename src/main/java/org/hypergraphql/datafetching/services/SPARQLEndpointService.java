@@ -21,9 +21,10 @@ import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.query.converters.SPARQLServiceConverter;
 import org.hypergraphql.query.pattern.Query;
 import org.hypergraphql.query.pattern.QueryPattern;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -33,7 +34,7 @@ import java.util.stream.Collectors;
 
 public class SPARQLEndpointService extends SPARQLService {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(SPARQLEndpointService.class);
+    private final static Logger LOGGER = LogManager.getLogger(SPARQLEndpointService.class);
     private String url;
     private String user;
     private String password;

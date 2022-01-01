@@ -3,6 +3,7 @@
   "extraction": true,
   "mapping": "mapping.ttl",
   "server": {
+    "host": "0.0.0.0",
     "port": 8000,
     "graphql": "/graphql",
     "graphiql": "/graphiql",

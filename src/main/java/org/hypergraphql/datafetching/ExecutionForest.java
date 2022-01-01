@@ -3,9 +3,10 @@ package org.hypergraphql.datafetching;
 import org.hypergraphql.config.schema.HGQLVocabulary;
 import org.hypergraphql.datafetching.services.resultmodel.QueryRootResult;
 import org.hypergraphql.datafetching.services.resultmodel.Result;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -18,7 +19,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class ExecutionForest  {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ExecutionForest.class);
+    private final static Logger LOGGER = LogManager.getLogger(ExecutionForest.class);
     private boolean isRoot;
     private HashSet<ExecutionTreeNode> forest;
 

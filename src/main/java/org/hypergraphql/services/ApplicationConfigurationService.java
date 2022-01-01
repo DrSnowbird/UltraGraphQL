@@ -6,9 +6,10 @@ import com.mashape.unirest.request.GetRequest;
 import org.apache.commons.io.FilenameUtils;
 import org.hypergraphql.config.system.HGQLConfig;
 import org.hypergraphql.exception.HGQLConfigurationException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,7 +28,7 @@ public class ApplicationConfigurationService {
     private S3Service s3Service;
     private HGQLConfigService hgqlConfigService = new HGQLConfigService();
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ApplicationConfigurationService.class);
+    private final static Logger LOGGER = LogManager.getLogger(ApplicationConfigurationService.class);
 
     public List<HGQLConfig> readConfigurationFromS3(final String configUri, final String username, final String password) {
 

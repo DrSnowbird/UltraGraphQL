@@ -12,7 +12,8 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.reasoner.Reasoner;
 import org.apache.jena.reasoner.ReasonerRegistry;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hypergraphql.config.system.ServiceConfig;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +36,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ExtractionControllerTest {
 
     private static final String NAME_DATASET_SUBCLASS = "/subclass";
-    static Logger log = Logger.getLogger(ExtractionControllerTest.class.getName());
+    static Logger log = LogManager.getLogger(ExtractionControllerTest.class.getName());
     private Dataset ds1;
     private Dataset ds2;
     private Dataset da_subclass;

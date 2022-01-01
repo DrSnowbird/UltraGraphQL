@@ -13,9 +13,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 //@Disabled
 class HGraphQLConverterTest {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(HGraphQLConverterTest.class);
+    private final static Logger LOGGER = LogManager.getLogger(HGraphQLConverterTest.class);
 
     private Controller controller;
     private HGQLConfig config;

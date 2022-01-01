@@ -5,9 +5,10 @@ import org.apache.jena.arq.querybuilder.SelectBuilder;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
 import org.hypergraphql.config.schema.HGQLVocabulary;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ public class ModelContainer {
 
     protected Model model;   // An RDF Model
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ModelContainer.class);
+    private static final Logger LOGGER = LogManager.getLogger(ModelContainer.class);
 
     public String getDataOutput(String format) {
 

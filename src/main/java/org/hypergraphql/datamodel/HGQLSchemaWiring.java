@@ -10,9 +10,10 @@ import org.hypergraphql.config.system.ServiceConfig;
 import org.hypergraphql.datafetching.services.Service;
 import org.hypergraphql.exception.HGQLConfigurationException;
 import org.hypergraphql.mutation.SPARQLMutationConverter.MUTATION_ACTION;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ import static org.hypergraphql.config.schema.HGQLVocabulary.*;
 
 public class HGQLSchemaWiring {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(HGQLSchemaWiring.class);
+    private static final Logger LOGGER = LogManager.getLogger(HGQLSchemaWiring.class);
 
     private HGQLSchema hgqlSchema;
     private GraphQLSchema schema;

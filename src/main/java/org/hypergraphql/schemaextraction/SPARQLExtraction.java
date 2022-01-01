@@ -13,9 +13,10 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.web.HttpOp;
 import org.apache.jena.update.UpdateAction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -26,7 +27,7 @@ import java.io.FileNotFoundException;
  */
 public class SPARQLExtraction {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SPARQLExtraction.class);
+    private static final Logger LOGGER = LogManager.getLogger(SPARQLExtraction.class);
     private MappingConfig mapConfig;
     private QueryTemplatingEngine engine;
     //private static final String RDF_FILE_ENDPOINT_ADDRESS = "http://localhost:";

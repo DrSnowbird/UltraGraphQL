@@ -10,7 +10,7 @@ java -jar ../../build/libs/ultragraphql-<version>-exe.jar --config config.json
 ```
 e.g.:
 ```bash
-java -jar ../../build/libs/ultragraphql-1.1.0-exe.jar --config config.json
+java -jar ../../build/libs/ultragraphql-1.1.4-exe.jar --config config.json
 ```
 
 ## Sample Queries
@@ -32,10 +32,10 @@ In this query the output type of the field *ex_relatedWith* is object type of th
 In the example query the name and id of each person and the persons they are related with are queried.
 ```graphql
 {
-    ex_Person{
+    ex_Person {
         _id
         ex_name
-        ex_relatedWith{
+        ex_relatedWith {
             _id
             ex_name
         }
@@ -55,10 +55,10 @@ This mapping procedure allows to query for fields that all types have without ne
 To query the brand and model of a car a person drives no type must be specified because both types have the same fields.
 ```graphql
 {
-    ex_Person{
+    ex_Person {
         _id
         ex_name
-        ex_drives{
+        ex_drives {
             ex_brand
             ex_model
         }

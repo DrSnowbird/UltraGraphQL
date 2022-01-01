@@ -15,9 +15,10 @@ import org.hypergraphql.datafetching.services.resultmodel.Result;
 import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.query.converters.SPARQLServiceConverter;
 import org.hypergraphql.query.pattern.Query;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -39,7 +40,7 @@ public class SPARQLEndpointExecution implements Callable<SPARQLExecutionResult> 
     Set<String> markers;
     SPARQLEndpointService sparqlEndpointService;
     protected HGQLSchema schema ;
-    protected Logger LOGGER = LoggerFactory.getLogger(SPARQLEndpointExecution.class);
+    protected Logger LOGGER = LogManager.getLogger(SPARQLEndpointExecution.class);
     String rootType;
     SPARQLServiceConverter converter;
 

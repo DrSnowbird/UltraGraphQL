@@ -1,6 +1,7 @@
 package org.hypergraphql.services;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hypergraphql.config.system.HGQLConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HGQLConfigServiceTest {
 
-    static Logger log = Logger.getLogger(HGQLConfigServiceTest.class.getName());
+    static Logger log = LogManager.getLogger(HGQLConfigServiceTest.class.getName());
     private String config_1 = "./src/test/resources/test_config_with_mapping.json";
     private InputStream config_1_input_stream;
 

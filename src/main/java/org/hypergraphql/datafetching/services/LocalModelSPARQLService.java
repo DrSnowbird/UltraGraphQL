@@ -8,6 +8,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.update.UpdateAction;
+import org.apache.logging.log4j.LogManager;
 import org.hypergraphql.config.system.ServiceConfig;
 import org.hypergraphql.datafetching.LocalSPARQLExecution;
 import org.hypergraphql.datafetching.SPARQLExecutionResult;
@@ -17,9 +18,10 @@ import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.exception.HGQLConfigurationException;
 import org.hypergraphql.query.pattern.Query;
 import org.hypergraphql.util.LangUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -36,7 +38,7 @@ import java.util.stream.Collectors;
  */
 public class LocalModelSPARQLService extends SPARQLEndpointService{
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(LocalModelSPARQLService.class);
+    private final static Logger LOGGER = LogManager.getLogger(LocalModelSPARQLService.class);
 
     protected Dataset dataset;
     protected String filepath;

@@ -13,9 +13,8 @@ import org.hypergraphql.datafetching.TreeExecutionResult;
 import org.hypergraphql.datamodel.HGQLSchema;
 import org.hypergraphql.query.converters.HGraphQLConverter;
 import org.hypergraphql.query.pattern.Query;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.InputStream;
 import java.util.Map;
 import java.util.Set;
@@ -26,7 +25,7 @@ public class HGraphQLService extends Service {
     private String user;
     private String password;
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(HGraphQLService.class);
+    private final static Logger LOGGER = LogManager.getLogger(HGraphQLService.class);
 
     @Override
     public TreeExecutionResult executeQuery(Query query, Set<String> input, Set<String> markers , String rootType, HGQLSchema schema) {

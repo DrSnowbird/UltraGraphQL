@@ -2,8 +2,10 @@ package org.hypergraphql.schemaextraction;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.jena.rdf.model.Model;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hypergraphql.config.system.ServiceConfig;
 import org.hypergraphql.exception.HGQLConfigurationException;
 
@@ -18,7 +20,7 @@ import java.util.Map;
  */
 public class ExtractionController {
 
-    static Logger LOGGER = LoggerFactory.getLogger(ExtractionController.class);
+    static Logger LOGGER = LogManager.getLogger(ExtractionController.class);
     private static final String SPARQL_ENDPOINT = "SPARQLEndpointService";
     private static final String LOCAL_RDF_MODEL = "LocalModelSPARQLService";
     private List<ServiceConfig>  serviceConfigs;

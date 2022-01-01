@@ -2,9 +2,10 @@ package org.hypergraphql.schemaextraction;
 
 import org.apache.jena.query.ParameterizedSparqlString;
 import org.hypergraphql.config.schema.HGQLVocabulary;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class QueryTemplatingEngine {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(QueryTemplatingEngine.class);
+    private static final Logger LOGGER = LogManager.getLogger(QueryTemplatingEngine.class);
     private MappingConfig mapping;
     ParameterizedSparqlString template_query;
     private String query_service_template;

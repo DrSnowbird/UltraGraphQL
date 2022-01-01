@@ -11,8 +11,10 @@ import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider;
 import org.hypergraphql.config.system.HGQLConfig;
 import org.hypergraphql.services.HGQLRequestService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -39,7 +41,7 @@ import static spark.Spark.before;
  */
 public class Controller {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(Controller.class);
+    private final static Logger LOGGER = LogManager.getLogger(Controller.class);
 
     private Service hgqlService;
     private HGQLConfig config;

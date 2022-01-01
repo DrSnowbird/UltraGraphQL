@@ -11,8 +11,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.hypergraphql.config.system.HGQLConfig;
 import org.hypergraphql.exception.HGQLConfigurationException;
 import org.hypergraphql.services.ApplicationConfigurationService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +30,7 @@ import static org.hypergraphql.util.PathUtils.isS3;
 
 public class Application {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(Application.class);
+    private final static Logger LOGGER = LogManager.getLogger(Application.class);
 
     public static void main(final String[] args) throws Exception {
 

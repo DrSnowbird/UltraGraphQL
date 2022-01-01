@@ -1,9 +1,11 @@
 package org.hypergraphql.datafetching.services.resultmodel;
 
+import org.apache.logging.log4j.LogManager;
 import org.hypergraphql.query.converters.SPARQLServiceConverter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -14,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class ObjectResult extends Result<Map<String, Object>> {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ObjectResult.class);
+    private final static Logger LOGGER = LogManager.getLogger(ObjectResult.class);
     Map<String, Map<String, Result>> subfields = new HashMap<>();   // subfields for each queried entity, first string is the ID of the object second String indicates the subfield.
 
     /**
