@@ -1,40 +1,34 @@
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ex:      <http://example.org/> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix ex:   <http://example.org/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ex:addr742ET
-      a       ex:Address ;
-      ex:street_name "Evergreen Terrace" ;
-      ex:street_number 742 .
+ex:addr742ET  rdf:type    ex:Address ;
+        ex:street_name    "Evergreen Terrace" ;
+        ex:street_number  742 .
 
-ex:Ecar
-      rdfs:subClassOf ex:Car .
+ex:Ecar  rdfs:subClassOf  ex:Car .
 
-ex:car_1
-      a       ex:Car ;
-      ex:brand "VW" ;
-      ex:color "black" ;
-      ex:model "1999" .
+ex:alice  rdf:type      ex:Person ;
+        ex:address      ex:addr742ET ;
+        ex:age          24 ;
+        ex:drives       ex:car_2 ;
+        ex:name         "Alice" ;
+        ex:relatedWith  ex:bob .
 
-ex:car_2
-      a       ex:Ecar ;
-      ex:brand "Tesla" ;
-      ex:maxCharge "85 KWh" ;
-      ex:model "1995" .
+ex:car_2  rdf:type    ex:Ecar ;
+        ex:brand      "Tesla" ;
+        ex:maxCharge  "85 KWh" ;
+        ex:model      "1995" .
 
-ex:alice
-      a       ex:Person ;
-      ex:address ex:addr742ET ;
-      ex:age  24 ;
-      ex:drives ex:car_2 ;
-      ex:name "Alice" ;
-      ex:relatedWith ex:bob .
+ex:car_1  rdf:type  ex:Car ;
+        ex:brand  "VW" ;
+        ex:color  "black" ;
+        ex:model  "1999" .
 
-ex:bob
-      a       ex:Person ;
-      ex:address "Evergreen Terrace 742" ;
-      ex:age  42 ;
-      ex:drives ex:car_1 ;
-      ex:name "Bob" ;
-      ex:relatedWith ex:alice .
+ex:bob  rdf:type        ex:Person ;
+        ex:address      "Evergreen Terrace 742" ;
+        ex:age          42 ;
+        ex:drives       ex:car_1 ;
+        ex:name         "Bob" ;
+        ex:relatedWith  ex:alice .

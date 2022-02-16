@@ -14,6 +14,25 @@ java -jar ../../build/libs/ultragraphql-<version>-exe.jar --config config.json
 e.g.:
 ```bash
 java -jar ../../build/libs/ultragraphql-1.1.0-exe.jar --config config.json
+
+
+Then, you will see the console eventually print instructions like below for you to try 'graphiql':
+
+     _   _ _ _              ____                 _      ___  _
+    | | | | | |_ _ __ __ _ / ___|_ __ __ _ _ __ | |__  / _ \| |
+    | | | | | __| '__/ _` | |  _| '__/ _` | '_ \| '_ \| | | | |
+    | |_| | | |_| | | (_| | |_| | | | (_| | |_) | | | | |_| | |___
+     \___/|_|\__|_|  \__,_|\____|_|  \__,_| .__/|_| |_|\__\_\_____|
+                                          |_|
+----------------------------------------------------------------------
+
+16:11:24 INFO  Application :: Starting controller...
+HGQL service name: one_service
+GraphQL server started at: http://localhost:8000/graphql
+GraphiQL UI available at: http://localhost:8000/graphiql
+
+Assuming you use port 8000 on the host, then the above URLs are for you to access 'graphiql'
+
 ```
 
 > Performed mutations on the dataset are persisted. To reset the dataset reload it form the repository or make a local copy.
@@ -32,6 +51,66 @@ mutation{
     ex_model
   }
 }
+```
+
+### Handy Scripts
+The following graphql scripts is for handy useage for convience - just copy it over to graphiql web ui and you can comment/uncomment fragments to try out 'mutations':
+```graphql
+# Welcome to GraphiQL
+#
+# GraphiQL is an in-browser tool for writing, validating, and
+# testing GraphQL queries.
+#
+# Type queries into this side of the screen, and you will see intelligent
+# typeaheads aware of the current GraphQL type schema and live syntax and
+# validation errors highlighted within the text.
+#
+# GraphQL queries typically start with a "{" character. Lines that starts
+# with a # are ignored.
+#
+# An example GraphQL query might look like:
+#
+#     {
+#       field(arg: "value") {
+#         subField
+#       }
+#     }
+#
+# Keyboard shortcuts:
+#
+#       Run Query:  Ctrl-Enter (or press the play button above)
+#
+#   Auto Complete:  Ctrl-Space (or just start typing)
+#
+
+
+query {
+  ex_Car {
+    _id
+    ex_model
+  }
+}
+
+# mutation{
+#   insert_ex_Car(_id:"http://example.org/car_3", ex_brand:"BMW", ex_model:"2000", ex_color:"gray"){
+#     _id
+#     ex_model
+#   }
+# }
+
+# mutation{
+#   delete_ex_Car(_id:"http://example.org/car_3"){
+#     _id
+#     ex_model
+#   }
+# }
+
+# mutation{
+#   delete_ex_Car(ex_brand:"BMW", ex_model:"2000", ex_color:"gray"){
+#     _id
+#     ex_model
+#   }
+# }
 ```
 
 ### Delete Mutations

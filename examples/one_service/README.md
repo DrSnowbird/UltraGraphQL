@@ -11,6 +11,27 @@ java -jar ../../build/libs/ultragraphql-<version>-exe.jar --config config.json
 e.g.:
 ```bash
 java -jar ../../build/libs/ultragraphql-1.1.4-exe.jar --config config.json
+
+Then, you will see the console eventually print instructions like below for you to try 'graphiql':
+
+     _   _ _ _              ____                 _      ___  _
+    | | | | | |_ _ __ __ _ / ___|_ __ __ _ _ __ | |__  / _ \| |
+    | | | | | __| '__/ _` | |  _| '__/ _` | '_ \| '_ \| | | | |
+    | |_| | | |_| | | (_| | |_| | | | (_| | |_) | | | | |_| | |___
+     \___/|_|\__|_|  \__,_|\____|_|  \__,_| .__/|_| |_|\__\_\_____|
+                                          |_|
+----------------------------------------------------------------------
+
+16:11:24 INFO  Application :: Starting controller...
+HGQL service name: one_service
+GraphQL server started at: http://localhost:8000/graphql
+GraphiQL UI available at: http://localhost:8000/graphiql
+
+Assuming you use port 8000 on the host, then the above URLs are for you to access 'graphiql'
+
+```
+
+## To access GraphiQL Web UI:
 ```
 
 ## Sample Queries
