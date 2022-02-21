@@ -2,6 +2,7 @@
   "name": "multiple_service_test",
   "extraction": true,
   "server": {
+    "host": "0.0.0.0",
     "port": 8092,
     "graphql": "/graphql",
     "graphiql": "/graphiql",

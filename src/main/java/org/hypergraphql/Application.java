@@ -51,17 +51,17 @@ public class Application {
 
         final boolean showBanner = !commandLine.hasOption("nobanner");
 
-        if(commandLine.hasOption("config") || commandLine.hasOption("s3")) {
+        if (commandLine.hasOption("config") || commandLine.hasOption("s3")) {
 
             configurations = getConfigurationFromArgs(service, commandLine);
         } else {
 
             final Map<String, String> properties;
-            if(commandLine.hasOption("D")) {
+            if (commandLine.hasOption("D")) {
                 final Properties props = commandLine.getOptionProperties("D");
 
                 properties = new HashMap<>();
-                props.forEach((k, v) -> properties.put((String)k, (String)v));
+                props.forEach((k, v) -> properties.put((String) k, (String) v));
 
             } else {
                 properties = System.getenv();
@@ -70,7 +70,7 @@ public class Application {
             configurations = getConfigurationsFromProperties(properties, service);
         }
 
-        if(configurations.size() == 0) {
+        if (configurations.size() == 0) {
             System.err.println("No configurations loaded, exiting");
             return;
         }
@@ -84,7 +84,7 @@ public class Application {
 
     protected static void start(final List<HGQLConfig> configurations, final boolean showBanner) throws IOException {
 
-        if(showBanner) {
+        if (showBanner) {
             showBanner();
         }
 
@@ -102,7 +102,7 @@ public class Application {
 
         // look for environment variables
         final String configPath = properties.get("hgql_config");
-        if(StringUtils.isBlank(configPath)) {
+        if (StringUtils.isBlank(configPath)) {
             throw new HGQLConfigurationException("No configuration parameters seem to have been provided");
         }
         final String username = properties.get("hgql_username");
@@ -112,9 +112,9 @@ public class Application {
         LOGGER.debug("Username: {}", username);
         LOGGER.debug("Password: {}", password == null ? "Not provided" : "**********");
 
-        if(isS3(configPath)) {
+        if (isS3(configPath)) {
             return service.readConfigurationFromS3(configPath, username, password);
-        } else if(isNormalURL(configPath)) {
+        } else if (isNormalURL(configPath)) {
             return service.readConfigurationFromUrl(configPath, username, password);
         } else {
             // assume it's a normal file
@@ -159,11 +159,11 @@ public class Application {
                                 .build()
                 ).addOption(
                         Option.builder("D")
-                                .longOpt( "property=value" )
+                                .longOpt("property=value")
                                 .hasArgs()
                                 .numberOfArgs(2)
                                 .valueSeparator()
-                                .desc( "use value for given property" )
+                                .desc("use value for given property")
                                 .build()
                 ).addOption(
                         Option.builder("nobanner")
@@ -178,7 +178,7 @@ public class Application {
             final ApplicationConfigurationService service,
             final CommandLine commandLine
     ) {
-        if(commandLine.hasOption("s3")) {
+        if (commandLine.hasOption("s3")) {
 
             final String s3url = commandLine.getOptionValue("s3");
             final String accessKey = commandLine.getOptionValue('u');
@@ -186,7 +186,7 @@ public class Application {
 
             // URL lookup
             return service.readConfigurationFromS3(s3url, accessKey, secretKey);
-        } else if(commandLine.hasOption("config")) {
+        } else if (commandLine.hasOption("config")) {
 
             if (commandLine.hasOption("classpath")) {
                 return service.getConfigResources(commandLine.getOptionValues("config"));
@@ -212,7 +212,7 @@ public class Application {
 
         final String bannerFile = "banner.txt";
         final InputStream bannerInputStream = Application.class.getClassLoader().getResourceAsStream(bannerFile);
-        if(bannerInputStream == null) {
+        if (bannerInputStream == null) {
             System.out.println(Application.class.getClassLoader().getResource(bannerFile));
             System.err.println("Banner is null");
         }

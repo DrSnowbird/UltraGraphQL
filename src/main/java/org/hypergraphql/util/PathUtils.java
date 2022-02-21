@@ -10,7 +10,7 @@ public class PathUtils {
 
     public static String makeAbsolute(final String generalPath, final String path) {
 
-        if(isAbsolute(path)) { // FQ URL or absolute path
+        if (isAbsolute(path)) { // FQ URL or absolute path
             return path;
         } else {
             final String parentPath = FilenameUtils.getFullPath(generalPath);

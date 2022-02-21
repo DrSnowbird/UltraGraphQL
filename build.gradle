@@ -54,7 +54,17 @@ dependencies {
     implementation group: 'org.apache.jena', name: 'jena-core', version: jenaVersion
     implementation group: 'org.apache.jena', name: 'jena-fuseki-main', version: jenaVersion
     implementation group: 'org.apache.jena', name: 'jena-querybuilder', version: jenaVersion
-    
+    // https://mvnrepository.com/artifact/org.apache.jena/jena-shacl
+    implementation group: 'org.apache.jena', name: 'jena-shacl', version: jenaVersion
+    // https://mvnrepository.com/artifact/org.apache.jena/jena-fuseki-main
+    testImplementation group: 'org.apache.jena', name: 'jena-fuseki-main', version: jenaVersion
+    // https://mvnrepository.com/artifact/org.apache.jena/jena-iri
+    implementation group: 'org.apache.jena', name: 'jena-iri', version: jenaVersion
+
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+
     implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
     implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
 
@@ -108,7 +118,7 @@ task execute(type:JavaExec) {
 sourceSets {
     main {
         resources {
-            include '**/*.json', '**/*.xml', '**/*.vtl', '**/*.properties', '**/*.txt', '**/*.graphql', '**/*.sparql', '**/*.ttl'
+            include '**/*.json', '**/*.xml', '**/*.vtl', '**/*.properties', '**/*.txt', '**/*.graphql', '**/*.sparql', '**/*.ttl', '**/*.owl'
         }
     }
 }
