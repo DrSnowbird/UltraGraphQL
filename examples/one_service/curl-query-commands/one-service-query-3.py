@@ -1,3 +1,4 @@
+import requests
 import json
 
 url = "http://0.0.0.0:48000/graphql"

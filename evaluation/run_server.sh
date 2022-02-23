@@ -1,9 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
-export FUSEKI_HOME="${PWD}/apache-jena-fuseki-3.7.0"
-FBIN="./apache-jena-fuseki-3.7.0/bin"
-HOST="http://localhost:3030"
 
 # Color codes via https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux#5947802
 RED='\033[0;31m'
@@ -20,12 +17,23 @@ rlog() {
   echo -e "${RED}${1}${NC}"
 }
 
-
+HOST="http://0.0.0.0:3030"
+RUN_LATEST_FUSEKI=1
+if [ ${RUN_LATEST_FUSEKI} -lt 1 ]; then
+    ## -- Apache Jean Fuseki v3.7.0: -- ##
+    export FUSEKI_HOME="${PWD}/apache-jena-fuseki-3.7.0"
+else
+    ## -- Apache Jean Fuseki v4.4.0: -- ##
+    export FUSEKI_HOME="${PWD}/apache-jena-fuseki-4.4.0"
+fi
 log "Starting Fuseki server in the background"
-./apache-jena-fuseki-3.7.0/fuseki-server --config=fuseki_config.ttl > fuseki.log &
+${FUSEKI_HOME}/fuseki-server --config=fuseki_config.ttl > fuseki.log &
+    
 log "Interface running at ${HOST}"
 
 sleep 8s
+
+FBIN="${FUSEKI_HOME}/bin"
 
 #${FBIN}/s-put ${HOST}/dataset/data default data/raw/persons_and_cars.ttl
 

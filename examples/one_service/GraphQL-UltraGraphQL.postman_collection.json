@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "9340946f-126c-4902-a93e-6739687c2efb",
+		"name": "GraphQL-UltraGraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UltraGraphQL-query-one_service_Depth-One",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    ex_Person{\n        _id\n        ex_name\n        ex_age\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:48000/graphql",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "48000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    ex_Person{\n        _id\n        ex_name\n        ex_relatedWith{\n            _id\n            ex_name\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 04:32:22 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin,X-Requested-With,Content-Type,Accept,authorization,x-auth-token"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "499"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"extensions\": {},\n    \"data\": {\n        \"ex_Person\": [\n            {\n                \"ex_relatedWith\": [\n                    {\n                        \"_id\": \"http://example.org/alice\",\n                        \"ex_name\": [\n                            \"Alice\"\n                        ]\n                    }\n                ],\n                \"_id\": \"http://example.org/bob\",\n                \"ex_name\": [\n                    \"Bob\"\n                ]\n            },\n            {\n                \"ex_relatedWith\": [\n                    {\n                        \"_id\": \"http://example.org/bob\",\n                        \"ex_name\": [\n                            \"Bob\"\n                        ]\n                    }\n                ],\n                \"_id\": \"http://example.org/alice\",\n                \"ex_name\": [\n                    \"Alice\"\n                ]\n            }\n        ],\n        \"@context\": {\n            \"_type\": \"@type\",\n            \"_id\": \"http://hypergraphql.org/query/_id\",\n            \"ex_Person\": \"http://example.org/Person\",\n            \"ex_relatedWith\": \"http://example.org/relatedWith\",\n            \"ex_name\": \"http://example.org/name\"\n        }\n    },\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "UltraGraphQL-query-one_service_Depth-Two",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    ex_Person {\n        _id\n        ex_name\n        ex_age\n        ex_relatedWith {\n            _id\n            ex_name\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:48000/graphql",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "48000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    ex_Person{\n        _id\n        ex_name\n        ex_relatedWith{\n            _id\n            ex_name\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 04:32:22 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin,X-Requested-With,Content-Type,Accept,authorization,x-auth-token"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "499"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"extensions\": {},\n    \"data\": {\n        \"ex_Person\": [\n            {\n                \"ex_relatedWith\": [\n                    {\n                        \"_id\": \"http://example.org/alice\",\n                        \"ex_name\": [\n                            \"Alice\"\n                        ]\n                    }\n                ],\n                \"_id\": \"http://example.org/bob\",\n                \"ex_name\": [\n                    \"Bob\"\n                ]\n            },\n            {\n                \"ex_relatedWith\": [\n                    {\n                        \"_id\": \"http://example.org/bob\",\n                        \"ex_name\": [\n                            \"Bob\"\n                        ]\n                    }\n                ],\n                \"_id\": \"http://example.org/alice\",\n                \"ex_name\": [\n                    \"Alice\"\n                ]\n            }\n        ],\n        \"@context\": {\n            \"_type\": \"@type\",\n            \"_id\": \"http://hypergraphql.org/query/_id\",\n            \"ex_Person\": \"http://example.org/Person\",\n            \"ex_relatedWith\": \"http://example.org/relatedWith\",\n            \"ex_name\": \"http://example.org/name\"\n        }\n    },\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "UltraGraphQL-query-one_service_All-Output-Types",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    ex_Person{\n        _id\n        ex_name\n        ex_address{\n            ...on hgqls_Literal{\n                hgqls_value\n            }\n            ...on ex_Address{\n                ex_street_name\n                ex_street_number\n            }\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:48000/graphql",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "48000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n    ex_Person{\n        _id\n        ex_name\n        ex_relatedWith{\n            _id\n            ex_name\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 04:32:22 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin,X-Requested-With,Content-Type,Accept,authorization,x-auth-token"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "499"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.29.v20200521)"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"extensions\": {},\n    \"data\": {\n        \"ex_Person\": [\n            {\n                \"ex_relatedWith\": [\n                    {\n                        \"_id\": \"http://example.org/alice\",\n                        \"ex_name\": [\n                            \"Alice\"\n                        ]\n                    }\n                ],\n                \"_id\": \"http://example.org/bob\",\n                \"ex_name\": [\n                    \"Bob\"\n                ]\n            },\n            {\n                \"ex_relatedWith\": [\n                    {\n                        \"_id\": \"http://example.org/bob\",\n                        \"ex_name\": [\n                            \"Bob\"\n                        ]\n                    }\n                ],\n                \"_id\": \"http://example.org/alice\",\n                \"ex_name\": [\n                    \"Alice\"\n                ]\n            }\n        ],\n        \"@context\": {\n            \"_type\": \"@type\",\n            \"_id\": \"http://hypergraphql.org/query/_id\",\n            \"ex_Person\": \"http://example.org/Person\",\n            \"ex_relatedWith\": \"http://example.org/relatedWith\",\n            \"ex_name\": \"http://example.org/name\"\n        }\n    },\n    \"errors\": []\n}"
+				}
+			]
+		}
+	]
+}

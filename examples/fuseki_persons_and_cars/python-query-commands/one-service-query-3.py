@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = "http://0.0.0.0:48000/graphql"
+url = "http://0.0.0.0:8092/graphql"
 
 payload="{\"query\":\"{\\n    ex_Person{\\n        _id\\n        ex_name\\n        ex_age\\n    }\\n}\",\"variables\":{}}"
 headers = {

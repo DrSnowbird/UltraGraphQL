@@ -1,0 +1,19 @@
+{
+  "name": "query-persons-and-cars",
+  "extraction": true,
+  "server": {
+    "port": 8092,
+    "graphql": "/graphql",
+    "graphiql": "/graphiql"
+  },
+  "services": [
+    {
+      "id": "dataset",
+      "type": "SPARQLEndpointService",
+      "url": "http://0.0.0.0:13030/persons_and_cars/",
+      "graph": "",
+      "user": "",
+      "password": ""
+    }
+  ]
+}

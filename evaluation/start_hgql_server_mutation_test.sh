@@ -1,4 +1,4 @@
-#!/usr/bin/env bash""
+#!/bin/bash
 
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 HOST="http://localhost:8098/graphql"

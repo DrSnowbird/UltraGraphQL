@@ -7,3 +7,29 @@
 | [extended_mapping](extended_mapping/README.md)   | UGQL endpoint with extended mapping configuration and equivalence relations to demonstrate possible use cases  |
 | [mutations](mutations/README.md)                 | UGQL endpoint with enabled mutations to insert and delete data                                                 |
 
+# Service Type (UltragraphQL)
+Examples as below shows two different services configurations:
+```
+  "services": [
+    {
+      "id": "dataset",
+      "type": "LocalModelSPARQLService",
+      "filepath": "dataset.ttl",
+      "filetype": "Turtle"
+    }
+  ]
+
+or,
+
+  "services": [
+    {
+      "id": "dataset",
+      "type": "SPARQLEndpointService",
+      "url": "https://dbpedia.org/sparql",
+      "graph": "http://dbpedia.org",
+      "user": "",
+      "password": ""
+    }
+  ]
+  
+```

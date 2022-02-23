@@ -1,4 +1,4 @@
-#!/usr/bin/env bash""
+#!/bin/bash
 
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 HOST_hgql_1="http://localhost:8098/graphql"
@@ -20,20 +20,29 @@ rlog() {
 }
 log "Starting HGQL server for the One Service Test"
 
-#log "Starting HGQL 2.0.0 endpoint in the background"
-#java -jar ./hypergraphql-2.0.0-exe.jar --config "configs/one_service/config_hgql_2.0.0.json" >> logs/one_service/hgql_2.0.0.log &
-#log "Interface running at http://localhost:8092/graphql"
 
-#log "Starting HGQL 2.0.0 Standalone endpoint in the background"
-#java -jar ./hypergraphql-2.0.0-exe.jar --config "configs/one_service/config_hgql_2.0.0_standalone.json" >> logs/one_service/hgql_2.0.0_standalone.log &
+log "Starting HGQL 2.0.0 endpoint in the background"
+java -jar ./hypergraphql-2.0.0-exe.jar --config "configs/one_service/config_hgql_2.0.0.json" >> logs/one_service/hgql_2.0.0.log &
+#log "Interface running at http://localhost:8092/graphql"
+log "GraphQL server started at: http://localhost:8092/graphql"
+log "GraphiQL UI available at: http://localhost:8092/graphiql"
+
+log "Starting HGQL 2.0.0 Standalone endpoint in the background"
+java -jar ./hypergraphql-2.0.0-exe.jar --config "configs/one_service/config_hgql_2.0.0_standalone.json" >> logs/one_service/hgql_2.0.0_standalone.log &
 #log "Interface running at http://localhost:8093/graphql"
+log "GraphQL server started at: http://localhost:8093/graphql"
+log "GraphiQL UI available at: http://localhost:8093/graphiql"
 
 log "Starting UGQL 1.1.0 endpoint in the background"
 java -jar ./ultragraphql-1.1.0-exe.jar --config "configs/one_service/config_ugql_1.1.0.json" >> logs/one_service/ugql_1.1.0.log &
-log "Interface running at http://localhost:8000/graphql"
+#log "Interface running at http://localhost:8000/graphql"
+log "GraphQL server started at: http://localhost:8000/graphql"
+log "GraphiQL UI available at: http://localhost:8000/graphiql"
 
 log "Starting UGQL 1.1.0 Standalone endpoint in the background"
 java -jar ./ultragraphql-1.1.0-exe.jar --config "configs/one_service/config_ugql_1.1.0_standalone.json" >> logs/one_service/ugql_1.1.0_standalone.log &
-log "Interface running at http://localhost:8001/graphql"
+#log "Interface running at http://localhost:8001/graphql"
+log "GraphQL server started at: http://localhost:8001/graphql"
+log "GraphiQL UI available at: http://localhost:8001/graphiql"
 wait
 
