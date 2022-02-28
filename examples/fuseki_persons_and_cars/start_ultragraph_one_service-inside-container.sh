@@ -36,6 +36,4 @@ echo -e ">>> HOST_NAME: ${HOST_NAME}"
 
 sed -i "s/0\.0\.0\.0/${HOST_IP}/g" config.json
 
-java -jar ../../build/libs/ultragraphql-1.1.4-exe.jar --config config.json#!/bin/bash -x
-
 java -jar ../../build/libs/ultragraphql-1.1.4-exe.jar --config config.json
