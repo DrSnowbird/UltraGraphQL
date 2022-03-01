@@ -2,7 +2,7 @@
 * Updated or extended files:
   * build.gradle:
     * updated maven to use maven {url "https://plugins.gradle.org/m2/"} and 'maven-publish'
-    * updated to gradle v7.3.3 is used
+    * updated to gradle v7.4 is used
     * updated shadow plugin: 'gradle.plugin.com.github.johnrengelman:shadow:7.1.0'
     * updated to jenaVersion = '4.2.0' or above.
   * src/main/java/org/hypergraphql/Controller.java: changed host binding to allow access from outside of Container
@@ -10,7 +10,7 @@
   * src/main/java/org/hypergraphql/schemaextraction/SPARQLExtraction.java: changed RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:"
 
 # Requirements:
-* Gradle: v7.3.3
+* Gradle: v7.4
 * Java: v11
 
 # Release

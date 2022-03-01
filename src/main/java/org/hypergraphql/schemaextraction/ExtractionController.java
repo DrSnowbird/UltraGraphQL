@@ -59,7 +59,9 @@ public class ExtractionController {
                 LOGGER.debug("Extract schema form local RDF file for service " + conf.getId());
                 FileInputStream fileStream = null;
                 try{
-                    serviceSchema = this.extractor.extractSchemaFromLocalRDFFile(conf.getFilepath(), conf.getFiletype(), conf.getGraph());
+                    //serviceSchema = this.extractor.extractSchemaFromLocalRDFFile(conf.getFilepath(), conf.getFiletype(), conf.getGraph());
+                    String filePath="/home/developer/workspace/UltraGraphQL/examples/one_service/dataset.ttl";
+                    serviceSchema = this.extractor.extractSchemaFromLocalRDFFile(filePath, conf.getFiletype(), conf.getGraph());
                 }catch(Exception e){
                     e.printStackTrace();
                     LOGGER.error("File "+ conf.getFilepath() +" not found skip the Service "+ conf.getId());

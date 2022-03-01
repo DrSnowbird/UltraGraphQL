@@ -4,6 +4,8 @@ queryTranslation\.txt
 *.out
 *.log
 *.log.*
+**/*.swp
+
 evaluation/graphql.*
 evaluation/queries/**/results/*
 evaluation/run/*

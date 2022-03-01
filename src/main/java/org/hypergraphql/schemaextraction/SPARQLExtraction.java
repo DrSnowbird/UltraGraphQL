@@ -30,8 +30,7 @@ public class SPARQLExtraction {
     private static final Logger LOGGER = LogManager.getLogger(SPARQLExtraction.class);
     private MappingConfig mapConfig;
     private QueryTemplatingEngine engine;
-    //private static final String RDF_FILE_ENDPOINT_ADDRESS = "http://localhost:";
-    private static final String RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:";
+    private static final String RDF_FILE_ENDPOINT_ADDRESS = "http://localhost:";
     private static final String RDF_FILE_ENDPOINT_DATASET = "/dataset";
 
     /**
