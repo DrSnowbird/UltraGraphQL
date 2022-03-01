@@ -7,7 +7,6 @@
     * updated to jenaVersion = '4.2.0' or above.
   * src/main/java/org/hypergraphql/Controller.java: changed host binding to allow access from outside of Container
   * src/main/java/org/hypergraphql/config/system/GraphqlConfig.java: extended GraphqlConfig to support 'host' property
-  * src/main/java/org/hypergraphql/schemaextraction/SPARQLExtraction.java: changed RDF_FILE_ENDPOINT_ADDRESS = "http://0.0.0.0:"
 
 # Requirements:
 * Gradle: v7.4
