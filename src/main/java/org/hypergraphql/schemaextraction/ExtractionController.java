@@ -60,7 +60,6 @@ public class ExtractionController {
                 FileInputStream fileStream = null;
                 try{
                     serviceSchema = this.extractor.extractSchemaFromLocalRDFFile(conf.getFilepath(), conf.getFiletype(), conf.getGraph());
-                    serviceSchema = this.extractor.extractSchemaFromLocalRDFFile(filePath, conf.getFiletype(), conf.getGraph());
                 }catch(Exception e){
                     e.printStackTrace();
                     LOGGER.error("File "+ conf.getFilepath() +" not found skip the Service "+ conf.getId());
