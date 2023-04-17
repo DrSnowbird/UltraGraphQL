@@ -14,7 +14,6 @@ evaluation/.ipynb_checkpoints/*
 =======
 .idea/
 .gradle/
-build/
 bin/
 *.iml
 
@@ -29,3 +28,11 @@ out/
 # temp files
 **/ultragraphql*/
 *.tgz
+
+**build/classes
+**build/generated
+**build/lombok
+**build/reports
+**build/resources
+**build/test-results
+

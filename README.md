@@ -1,16 +1,17 @@
 # UltraGraphQL - cloned from https://git.rwth-aachen.de/i5/ultragraphql
+* (Note) This release need to use Gradle v8.1+ to work correctly.
 * Updated or extended files:
   * build.gradle:
     * updated maven to use maven {url "https://plugins.gradle.org/m2/"} and 'maven-publish'
-    * updated to gradle v7.4 is used
-    * updated shadow plugin: 'gradle.plugin.com.github.johnrengelman:shadow:7.1.0'
+    * updated to gradle v8.1 is used
+    * updated shadow plugin: 'gradle.plugin.com.github.johnrengelman:shadow:7.2.0'
     * updated to jenaVersion = '4.2.0' or above.
   * src/main/java/org/hypergraphql/Controller.java: changed host binding to allow access from outside of Container
   * src/main/java/org/hypergraphql/config/system/GraphqlConfig.java: extended GraphqlConfig to support 'host' property
 
 # Requirements:
-* Gradle: v7.4
-* Java: v11
+* Gradle: v8.1+
+* Java: v11+
 
 # Release
 * This is also a fix to mitigate the Log4Shell vulnerability.
