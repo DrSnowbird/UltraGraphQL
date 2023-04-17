@@ -35,4 +35,5 @@ out/
 **build/reports
 **build/resources
 **build/test-results
+**build/libs
 
